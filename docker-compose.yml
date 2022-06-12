@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db1: &defaults
+    build: .
+    command: --server_id=1
+    environment:
+      - MYSQL_ROOT_PASSWORD=DXIfsFmGNiQWvzy2
+      - MYSQL_DATABASE=classicmodels
+      - MYSQL_USER=cluster-admin
+      - MYSQL_PASSWORD=nqlMkIFxXrX93pK2
+    volumes:
+      - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
+      - ./conf.d/:/etc/mysql/conf.d/:ro
+  db2:
+    <<: *defaults
+    command: --server_id=2
+  db3:
+    <<: *defaults
+    command: --server_id=3
