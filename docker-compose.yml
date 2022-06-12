@@ -6,8 +6,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=DXIfsFmGNiQWvzy2
       - MYSQL_DATABASE=classicmodels
-      - MYSQL_USER=cluster-admin
-      - MYSQL_PASSWORD=nqlMkIFxXrX93pK2
     volumes:
       - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:ro
       - ./conf.d/:/etc/mysql/conf.d/:ro
