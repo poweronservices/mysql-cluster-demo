@@ -1,0 +1,4 @@
+[mysqld]
+binlog_transaction_dependency_tracking = WRITESET
+enforce_gtid_consistency = ON
+gtid_mode = ON
